@@ -122,11 +122,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         SizedBox(width: 8),
                         SizedBox(
-                          width: 230,
+                          width: 200,
                           child: Text(
                             "Michael Natanael",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Colors.white,
                             ),
                           ),
@@ -134,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           "2107411002",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.white,
                           ),
                         ),
@@ -151,11 +151,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         SizedBox(width: 8),
                         SizedBox(
-                          width: 230,
+                          width: 200,
                           child: Text(
                             "Chaesa Adella Rahma",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Colors.white,
                             ),
                           ),
@@ -163,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           "2107411003",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.white,
                           ),
                         ),
@@ -180,11 +180,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         SizedBox(width: 8),
                         SizedBox(
-                          width: 230,
+                          width: 200,
                           child: Text(
                             "Marwah Nur Shafira",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Colors.white,
                             ),
                           ),
@@ -192,7 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           "2107411008",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.white,
                           ),
                         ),
@@ -209,11 +209,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         SizedBox(width: 8),
                         SizedBox(
-                          width: 230,
+                          width: 200,
                           child: Text(
                             "Fatimah Nova Putri Diana",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Colors.white,
                             ),
                           ),
@@ -221,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           "2107411010",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.white,
                           ),
                         ),
@@ -238,11 +238,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         SizedBox(width: 8),
                         SizedBox(
-                          width: 230,
+                          width: 200,
                           child: Text(
                             "Annisa Marfadilla",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Colors.white,
                             ),
                           ),
@@ -250,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           "2107411019",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.white,
                           ),
                         ),
@@ -265,9 +265,13 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Align(
               alignment: Alignment.center,
               child: Container(
-                // ...container properties
+                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
                 child: _position != null
-                    ? Text('Current Location: ' + _position.toString())
+                    ? Text(
+                        'Current Location: \n' + _position.toString(),
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      )
                     : Text('No Location Data'),
               ),
             ),
