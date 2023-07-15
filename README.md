@@ -6,16 +6,18 @@ Repository containing Geolocator functionality implemented in Flutter
 
 https://youtu.be/BkBQ5A0SQmM
 
-## About Me
+## Run App
 
-Hi Folks! I am Kavit, a software engineer with a passion for teaching.
+start ms-settings:developers
 
-Please follow me and show your support, so that I can keep bringing this type of content.
+flutter pub get
 
-📹 YouTube: https://www.youtube.com/channel/UCV-_hzlbVSlobkekurpLOZw/featured
+flutter pub upgrade
 
-📸 Instagram: https://www.instagram.com/code_with_kavit/
+flutter pub outdated
 
-📂 Github: https://github.com/Kavit900
+flutter pub upgrade --major-versions
 
-💻 Discord: https://discord.gg/V3rhXEPe
+## Build APK
+
+flutter build apk --split-per-abi
