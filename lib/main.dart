@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -49,7 +51,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   Position? _position;
 
   void _getCurrentLocation() async {
@@ -64,9 +65,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
     permission = await Geolocator.checkPermission();
 
-    if(permission == LocationPermission.denied) {
+    if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
-      if(permission == LocationPermission.denied) {
+      if (permission == LocationPermission.denied) {
         return Future.error('Location Permissions are denied');
       }
     }
@@ -83,18 +84,203 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      // backgroundColor: Colors.grey[100],
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text("Geolocation App"),
+        title: const Text("Geolocation App"),
       ),
-      body: Center(
-        child: _position != null ? Text('Current Location: ' + _position.toString()) : Text('No Location Data'),
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
+            alignment: Alignment.bottomLeft,
+            height: 230,
+            decoration: BoxDecoration(color: Colors.blue.shade800),
+            child: Row(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Group 4 Mobile Computing",
+                      style: TextStyle(
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.circle,
+                          color: Colors.white,
+                          size: 8,
+                        ),
+                        SizedBox(width: 8),
+                        SizedBox(
+                          width: 230,
+                          child: Text(
+                            "Michael Natanael",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "2107411002",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.circle,
+                          color: Colors.white,
+                          size: 8,
+                        ),
+                        SizedBox(width: 8),
+                        SizedBox(
+                          width: 230,
+                          child: Text(
+                            "Chaesa Adella Rahma",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "2107411003",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.circle,
+                          color: Colors.white,
+                          size: 8,
+                        ),
+                        SizedBox(width: 8),
+                        SizedBox(
+                          width: 230,
+                          child: Text(
+                            "Marwah Nur Shafira",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "2107411008",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.circle,
+                          color: Colors.white,
+                          size: 8,
+                        ),
+                        SizedBox(width: 8),
+                        SizedBox(
+                          width: 230,
+                          child: Text(
+                            "Fatimah Nova Putri Diana",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "2107411010",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.circle,
+                          color: Colors.white,
+                          size: 8,
+                        ),
+                        SizedBox(width: 8),
+                        SizedBox(
+                          width: 230,
+                          child: Text(
+                            "Annisa Marfadilla",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "2107411019",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                // ...container properties
+                child: _position != null
+                    ? Text('Current Location: ' + _position.toString())
+                    : Text('No Location Data'),
+              ),
+            ),
+          ),
+        ],
       ),
+      // body: Center(
+      //   child: _position != null ? Text('Current Location: ' + _position.toString()) : Text('No Location Data'),
+      // ),
       floatingActionButton: FloatingActionButton(
         onPressed: _getCurrentLocation,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.my_location),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
