@@ -4,7 +4,7 @@ Repository containing Geolocator functionality implemented in Flutter
 
 ## Youtube Link
 
-https://youtu.be/BkBQ5A0SQmM
+...
 
 ## Run App
 
